@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller JavaScript 1 - Punto 3</title>
+
+    <style>
+         body {
+        
+        background-color: palegreen;
+        
+        }
+        
+        h1 {
+        
+           text-align: center;
+        
+        }
+        
+        </style>
+
+</head>
+<body>
+    
+    <h1>Taller JavaScript 1</h1>
+    <h3>Punto 3</h3>
+    <p>Crear un algoritmo que pida x cantidad de números e indique el porcentaje de números
+        pares y el porcentaje de números impares. </p>
+
+<div id="ric"></div>
+
+
+<script>
+
+alert  ("CONTADOR DE PARES E IMPARES")
+ let valores = parseInt(prompt("¿Cuantos valores va a introducir? "))
+  if (valores < 0 ){
+
+    alert ("¡Imposible!")
+
+  }
+ 
+  else{
+
+  let  pares = 0, numero
+
+      for ( let i=1; i<valores + 1; i++){
+
+        numero = parseInt(prompt(`Escriba el valor ${i}:` ))
+          if (numero % 2 == 0){
+
+            pares += 1
+          }
+          }
+        
+      document.getElementById('ric').innerHTML=`Ha escrito ${pares} números pares y ${valores - pares} números impares.`
+    
+  }
+
+</script>
+
+</body>
+
+</html>

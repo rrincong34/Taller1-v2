@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller JavaScript 1 - Punto 5</title>
+
+    <style>
+         body {
+        
+        background-color: palegreen;
+        
+        }
+        
+        h1 {
+        
+           text-align: center;
+            
+        }
+        
+        </style>
+
+</head>
+<body>
+    
+    <h1>Taller JavaScript 1</h1>
+    <h3>Punto 5</h3>
+    <p>Realiza un script que pida un texto e indique si es un palíndromo en un alert. Ejemplo de
+        palíndromo: “amor a roma”. </p>
+
+<script>
+
+let tex = prompt("Por favor ingrese una palabra o frase");
+    tex = tex.toLowerCase();
+    let text2 = tex.length;
+    let newTex = "";
+
+    for (let i=1; i<=text2; i++) {
+
+        newTex = newTex + tex.charAt(text2-i);
+        }
+
+    if (tex !== newTex) {
+
+        alert("Usuario la palabra que usted ingreso no es un palindromo");
+
+    } else {
+        alert("Usuario la palabra que usted ingreso si es un palindromo");
+    }
+
+</script>
+
+</body>
+
+</html>

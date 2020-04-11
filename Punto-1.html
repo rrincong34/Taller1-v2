@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller JavaScript 1 - Punto 1</title>
+
+    <style>
+         body {
+        
+        background-color: palegreen;
+        
+        }
+        
+        h1 {
+        
+           text-align: center;
+            
+        }
+        
+        </style>
+
+</head>
+
+<body>
+    
+    <h1>Taller JavaScript 1</h1>
+    <h3>Punto 1</h3>
+    <p>Pepe desea saber cuál será su calificación final en la materia de Lógica de Programación y
+        Algoritmos. Dicha calificación se compone de los siguientes porcentajes:
+
+
+        <ul>
+            <li>55% promedio de tres parciales.</li>
+            <li>30% Examen Final</li>
+            <li>15% Trabajo final</li>
+        </ul>
+
+    </p>
+
+
+    <script>
+
+
+        let calificacion, parcialUno,  parcialDos, parcialTres, examenFinal, trabajoFinal
+        let i
+for (i=0; i<1; i++) {
+
+    parcialUno = parseFloat(prompt('ingrese la nota del primer parcial (calificación 0-5)'))
+if (parcialUno<0 || parcialUno>5){
+alert("el valor no es valido")
+i--
+}
+}
+
+for (i=0; i<1; i++) {
+
+parcialDos = parseFloat(prompt('ingrese la nota del primer parcial (calificación 0-5)'))
+if (parcialDos<0 || parcialDos>5){
+alert("el valor no es valido")
+i--
+}
+}
+
+for (i=0; i<1; i++) {
+
+parcialTres = parseFloat(prompt('ingrese la nota del primer parcial (calificación 0-5)'))
+if (parcialTres<0 || parcialTres>5){
+alert("el valor no es valido")
+i--
+}
+}
+
+for (i=0; i<1; i++) {
+
+    examenFinal = parseFloat(prompt('ingrese la nota del primer parcial (calificación 0-5)'))
+if (examenFinal<0 || examenFinal>5){
+alert("el valor no es valido")
+i--
+}
+}
+
+
+for (i=0; i<1; i++) {
+
+    trabajoFinal = parseFloat(prompt('ingrese la nota del primer parcial (calificación 0-5)'))
+if (trabajoFinal<0 || trabajoFinal>5){
+alert("el valor no es valido")
+i--
+}
+}
+       
+calificacion = 0.55 * (parcialUno + parcialDos + parcialTres) / 3 + 0.3 * examenFinal + 0.15 * trabajoFinal
+        
+alert(`tu nota final es ${(Math.round(calificacion * 100) / 100)}`)
+
+      
+</script>
+  
+
+</body>
+
+</html>
+
+
+
+
+    
+    
+    
+    

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller JavaScript 1 - Punto 4</title>
+
+    <style>
+         body {
+        
+        background-color: palegreen;
+        
+        }
+        
+        h1 {
+        
+           text-align: center;
+            
+        }
+        
+        </style>
+
+</head>
+<body>
+    
+    <h1>Taller JavaScript 1</h1>
+    <h3>Punto 4</h3>
+    <p>Crear un algoritmo que imprima los números del 1 al 100 y del 101 al 200. El usuario debe
+        poder escoger la opción a imprimir. </p>
+
+
+        <button onclick="mostrar(1)">imprimir del 1 al 100  </button>
+        <button onclick="mostrar(2)">imprimir del 101 al 200  </button>
+
+
+<script>
+ 
+function mostrar(opcion){
+let ini
+switch (opcion){
+
+case 1: ini=0
+break;
+
+case 2: ini=100
+break;
+
+}
+for (let i=1; i<=100; i++){
+
+document.write( ini + i+" ")  
+
+}
+}
+
+</script>
+
+
+</body>
+
+
+
+</html>

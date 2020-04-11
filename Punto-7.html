@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller JavaScript 1 - Punto 7</title>
+
+    <style>
+         body {
+        
+        background-color: palegreen;
+        
+        }
+        
+        h1 {
+        
+           text-align: center;
+            
+        }
+        
+        </style> 
+</head>
+<body>
+    
+     <h1>Taller JavaScript 1</h1>
+    <h3>Punto 7</h3>
+    <p>Crear un script que muestre una palabra o frase ingresada al revés y que indique cuántas
+        letras y espacios tiene.
+       </p> 
+
+<div id="dato" ></div>
+
+<script>
+
+window .onload = function() {
+    text .init();
+}
+
+var text = {
+    original: '',
+    nuevo: '',
+    init : function () {
+        this .original = prompt( 'Escribe una frase' );
+
+        this .nuevo = text .reverse( this .original );
+        this .info = text .analicePhrase( this .original );
+
+        text .showData();
+
+    },
+    reverse: function( palabra ) {
+        return palabra .split('') .reverse() .join('');
+    },
+    analicePhrase( palabra ) {
+        let espa = 0,
+            letra = 0;
+
+        for( let i = palabra .length - 1; i >= 0; i-- ) {
+            
+            if( palabra[ i ] != ' ' ) { 
+                letra++;
+            }
+            else {
+                espa++;
+            }
+        }
+
+        return [ letra, espa ]
+    },
+    showData: function() {
+        console .log( this .nuevo );
+        console .log( this .info );
+        document .getElementById( 'dato' ) .innerHTML = `
+            <p><b>Original:</b> ${ this .original }</p>
+            <p><b>Al revés:</b> ${ this .nuevo }</p>
+            <p><b> - Letras:</b> ${ this .info[ 0 ] }</p>
+            <p><b> - Espacios:</b> ${ this .info[ 1 ] }</p>  `;
+    }
+}
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>

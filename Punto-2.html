@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller JavaScript 1 - Punto 2</title>
+
+    <style>
+         body {
+        
+        background-color: palegreen;
+        
+        }
+        
+        h1 {
+        
+           text-align: center;
+            
+        }
+        
+        </style>
+
+    <script>
+        
+        var nuAdivinar=Math.floor((Math.random()*100)+1);
+        var conRespuestas=0;
+ 
+        function adivinar()
+        {
+            
+            var nuRespuestas=document.getElementById("nuRespuestas").value;
+ 
+            if(document.getElementById("nuRespuestas").disabled==false)
+            {
+                if(isNumber(nuRespuestas) && nuRespuestas>0)
+                {
+                    document.getElementById("nuRespuestas").disabled=true;
+                    document.getElementById("numero").disabled=false;
+                    document.getElementById("numero").focus();
+                }
+            }else{
+                
+                var respuestas=document.getElementById("respuestas").innerHTML;
+ 
+                if(conRespuestas<nuRespuestas)
+                {
+                  
+                    var numero=document.getElementById("numero").value;
+ 
+                    if(isNumber(numero) && numero>0 && numero<100)
+                    {
+                        
+                        conRespuestas+=1;
+ 
+                        if(numero>nuAdivinar)
+                        {                            
+                           
+                            respuestas+="<br>"+numero+" - El numero que buscas es inferior";
+                            document.getElementById("numero").focus();
+                        }else if(numero<nuAdivinar){
+                            
+ 
+                            
+                            respuestas+="<br>"+numero+" - El numero que buscas es superior";
+                            document.getElementById("numero").focus();
+                        }else{
+                                                       
+                            respuestas+="<br><span class='acertado'>"+numero+" - HAS ACETADO!!</span>";
+ 
+                            fin()
+                        }
+                        
+                        document.getElementById("numero").value="";
+                    }else{
+                        respuestas+="<br><span class='error'>"+numero+" - Tiene que ser un valor comprendido entre 1 y 100</span>";
+                    }
+                }else{
+                    respuestas+="<br><span class='fin'>GAME OVER!! El numero era el "+nuAdivinar+"</span>";
+ 
+                    fin()
+                }
+                
+                document.getElementById("respuestas").innerHTML=respuestas;
+            }
+             
+            return false;
+        }
+  
+        function fin()
+        {
+ 
+            document.getElementById("numero").disabled=true;
+            document.getElementById("btnEnviar").disabled=true;
+        }
+     
+        function isNumber(n)
+        {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+    </script>
+</head>
+ 
+<body>
+
+    
+    <h1>Taller JavaScript 1</h1>
+    <h3>Punto 1</h3>
+    <p>Crear un algoritmo en el cual el usuario tenga que adivinar un número. Este número lo
+        creará el sistema al azar. El usuario tiene solo 10 intentos y el sistema debe mostrar si el
+        usuario está cerca o lejos de dar con el número programado por el sistema. </p>
+
+
+
+<h2>Adivina un número entre 1 y 100</h2>
+ 
+<form onsubmit="return adivinar()">
+    Indica el número de intentos posibles:
+    <input type="text" name="nuRespuestas" id="nuRespuestas">
+ 
+    <br>Indica un numero entre 1 y 100:
+    <input type="text" name="numero" id="numero" disabled>
+ 
+    <br><input type="submit" value="Enviar" id="btnEnviar">
+</form> <br>
+ 
+<div id="respuestas"></div>
+ 
+</body>
+</html>
